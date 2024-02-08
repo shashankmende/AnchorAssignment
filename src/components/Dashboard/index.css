@@ -1,0 +1,78 @@
+
+*{
+    margin: 0px;
+}
+
+.dash-board-bg-container {
+    background-color: black;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.button-name{
+    color: #ffffff;
+    background-color: #262624;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: sans-serif;
+    margin:10px;
+}
+
+.create-post-button{
+    border: 3px solid #474745;
+    width: 150px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    color: #ffffff;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    
+}
+
+.dash-board-left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.create-post-form-container {
+    background-color: #474745;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 554px;
+height: 500px;
+top: 106px;
+left: 567px;
+border-radius: 10px;
+
+}
+
+.title-input {
+    padding: 10px;
+    width: 450px;
+    border-radius: 8px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    border: 1px solid #787774;
+}
+
+.description-input {
+    height: 80px;
+    padding: 10px;
+    width: 450px;
+    border:  1px solid #787774;
+    background-color: transparent;
+}

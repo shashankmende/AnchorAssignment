@@ -1,47 +1,68 @@
 
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import {Component} from 'react'
-import './App.css';
+import Home from './components/Home'
+import CreateAccount from './components/createAccount'
+import OTP from './components/OTP'
+import AnchorContext from './context/context'
+import Dashboard from './components/Dashboard'
 
-class App extends  Component {
+import './App.css'
+import AccountCreated from './components/accountCreated'
 
-  state = {otp:new Array(4).fill('')}
 
-   handleChange = (e,index)=>{
+class App extends Component {
 
-    const {otp} = this.state
-    if (isNaN(e.target.value)) return false
+  state = {name:'',email:''}
 
+  setName = (nae)=>{
     this.setState({
-      otp: [...otp.map((data,indx)=> index=== indx? e.target.value: data)]
+      name:nae
     })
-
-    if (e.target.value && e.target.nextSibling){
-      e.target.nextSibling.focus()
-    }
-
   }
-
+  
+  setEmail = (eal)=>{
+    this.setState({
+      email:eal
+    })
+  }
+  
   render(){
-    const {otp} = this.state
-    console.log(otp)
-    return (
-      <div className='otp-container'>
-        <h1>creating otp input fields</h1>
-        {otp.map((data,i)=>
-        <input type='text'
-        maxLength={1}
-        value={data}
-        onChange={(e)=>this.handleChange(e,i)}
-        />
-        )}
+    const {name,email}= this.state
+
+    console.log('name',name)
+    console.log('email',email)
 
 
-      </div>
+return (
+<AnchorContext.Provider value={{
+  name,
+  setName:this.setName,
+  email,
+  setEmail:this.setEmail
+}}>
+
+<BrowserRouter>
+    <Routes>
+      <Route  path='/' Component={Home}/>
+      <Route  path='/create-account' Component={CreateAccount} />
+      <Route path ='/otp'  Component={OTP}/>
+      <Route path='/account-created' Component={AccountCreated}/>
+      <Route path='/dash-board' Component={Dashboard}/>
+      </Routes>
+    </BrowserRouter>
+
+
+</AnchorContext.Provider>
+
+  
+  
     
-      )
-
+  
+)
   }
- 
 }
 
-export default App;
+
+
+export default  App
