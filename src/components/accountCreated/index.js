@@ -1,11 +1,24 @@
 
+import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import AnchorContext from '../../context/context' 
-import Header from '../Header'
+
 import NewHeader from '../NewHeader'
 import './index.css'
 
-const AccountCreated = ()=>(
+class AccountCreated extends Component {
+
+    componentDidMount(){
+        this.getData()
+    }
+
+    getData = async()=>{
+        
+    }
+
+    render(){
+        
+        return(
     <AnchorContext.Consumer>
         {value =>{
             const {name} = value
@@ -39,6 +52,9 @@ Successfully</h1>
         }}
     </AnchorContext.Consumer>
     
-)
+)}
+    }
+    
+
 
 export default AccountCreated
